@@ -1,0 +1,6 @@
+{
+  "name": "Giants (巨人) iOS App Simulator",
+  "description": "基于 SwiftUI 与 Swift Data 的 iOS 极简高保真灵感收集 App 的交互式开发与测试沙盒，体验著名的 3 秒一键卡片归置流程与定时灵感回声被动推送。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

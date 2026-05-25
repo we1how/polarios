@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Ma+Shan+Zheng&family=Liu+Jian+Mao+Cao&family=Kalam:wght@300;400;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Noto Serif SC", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-zh-hand: "Ma Shan Zheng", "Liu Jian Mao Cao", "Noto Serif SC", serif;
+  --font-en-hand: "Caveat", cursive;
+  --font-mono-hand: "Kalam", cursive;
+
+  --color-bg-primary: #F2F2F7;
+  --color-bg-secondary: #FFFFFF;
+  --color-text-primary: #1C1C1E;
+  --color-text-secondary: #48484A;
+  --color-text-muted: #8E8E93;
+}
+
+:root {
+  --paper: #F5F0EA;
+  --paper-dark: #ECE3D4;
+  --paper-edge: #DCC9A8;
+  --ink: #3D2B1A;
+  --ink-strong: #1A1A1A;
+  --ink-muted: #7A6A55;
+  --red: #8B2C1E;
+  --ochre: #C9A961;
+  --tape-y: rgba(232, 213, 130, 0.55);
+  --tape-p: rgba(220, 165, 165, 0.5);
+  --tape-b: rgba(168, 198, 232, 0.5);
+  --tape-w: rgba(255, 255, 255, 0.4);
+}
+
+/* Base style resets */
+html, body, #root {
+  background-color: #EAE3D2;
+  color: #3D2B1A;
+  font-family: var(--font-serif);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Paper textures (Scrapbook Mode) ──────────────────────────────── */
+.paper-cream {
+  background-color: #F5F0EA;
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 240, 210, 0.35), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(180, 140, 100, 0.08), transparent 60%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.18  0 0 0 0 0.10  0 0 0 0 0.10 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='p'><feTurbulence baseFrequency='0.012' numOctaves='3'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23p)'/></svg>");
+  background-blend-mode: multiply, multiply, multiply, normal;
+  color: #3D2B1A;
+}
+
+.paper-lined {
+  background-color: #FBF8EE;
+  background-image:
+    repeating-linear-gradient(to bottom, transparent 0 25px, rgba(120, 160, 200, 0.18) 25px 26px),
+    linear-gradient(to right, transparent 0 35px, rgba(200, 100, 100, 0.2) 35px 35.5px, transparent 35.5px),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.18  0 0 0 0 0.10  0 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  color: #1A1A1A;
+}
+
+.paper-kraft {
+  background-color: #E2D2B0;
+  background-image:
+    radial-gradient(ellipse at 50% 50%, rgba(160, 120, 80, 0.02), rgba(80, 50, 20, 0.18)),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence baseFrequency='1.4' numOctaves='3'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.22  0 0 0 0 0.10  0 0 0 0 0.20 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  color: #2E1F0F;
+}
+
+.paper-night {
+  background-color: #211D18;
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(120, 100, 70, 0.15), transparent 50%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.25  0 0 0 0 0.18  0 0 0 0 0.10  0 0 0 0 0.10 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  color: #EDE3D2;
+}
+
+/* ─── Scrapbook utilities ────────────────────────────────────────── */
+.font-en-hand { font-family: var(--font-en-hand), cursive; font-weight: 600; letter-spacing: 0.01em; }
+.font-zh-hand { font-family: var(--font-zh-hand), cursive; letter-spacing: 0.02em; }
+.font-mono-hand { font-family: var(--font-mono-hand), monospace; }
+
+/* deemphasize screen antialiasing for handwritten text to feel razor sharp like real ink */
+.font-en-hand, .font-zh-hand, .font-mono-hand {
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* Polaroid shadows */
+.polaroid-shadow {
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.04),
+    0 2px 6px rgba(60, 40, 20, 0.10),
+    0 12px 24px rgba(60, 40, 20, 0.18);
+}
+
+.polaroid-shadow-deep {
+  box-shadow:
+    0 1px 0 rgba(0,0,0,0.05),
+    0 4px 10px rgba(60, 40, 20, 0.16),
+    0 24px 40px rgba(60, 40, 20, 0.24);
+}
+
+/* Table surface background styling */
+.scrapbook-desk {
+  background-color: #E2D2B2;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(240, 220, 180, 0.2) 0%, rgba(0,0,0,0) 80%),
+    radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.08) 0%, rgba(0,0,0,0) 85%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='p'><feTurbulence baseFrequency='0.015' numOctaves='3'/><feColorMatrix values='0 0 0 0 0.3  0 0 0 0 0.2  0 0 0 0 0.1  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23p)'/></svg>");
+}
+
+/* iOS-like soft light scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/* Shimmer skeleton animations suited for light paper */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-skeleton {
+  background: linear-gradient(90deg, #E5E5EA 25%, #F2F2F7 50%, #E5E5EA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Glowing soft abstract lights for clean minimalism background */
+.bg-glow-orange {
+  background: radial-gradient(circle, rgba(0, 122, 255, 0.04) 0%, rgba(0,0,0,0) 70%);
+}
+
+.bg-glow-blue {
+  background: radial-gradient(circle, rgba(98, 0, 238, 0.03) 0%, rgba(0,0,0,0) 70%);
+}
+
+/* Custom wobble on hover animation */
+@keyframes wobble {
+  0%, 100% { transform: rotate(var(--rot, 0deg)) translateY(0); }
+  50% { transform: rotate(calc(var(--rot, 0deg) + 1deg)) translateY(-2px); }
+}
+
+.hover-wobble:hover {
+  animation: wobble 0.6s ease-in-out;
+}
+
+.spring-transition {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
